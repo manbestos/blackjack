@@ -1,0 +1,160 @@
+/* Style global et fond noir */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-top: 20px;
+  }
+  
+  /* Phase de configuration */
+  #setupContainer {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  label {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  select, input[type="number"], button {
+    font-size: 16px;
+    padding: 5px 10px;
+    margin: 5px;
+  }
+  
+  /* Zone de jeu */
+  #gameContainer {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    display: none;
+    position: relative;
+  }
+  
+  /* Section du croupier */
+  #dealerSection {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+  }
+  #dealerSection h2 {
+    margin-bottom: 10px;
+  }
+  
+  /* Zone des joueurs en ligne */
+  #playersSection {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .player {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 150px;
+    position: relative;
+  }
+  .player h2 {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+  
+  /* Messages d’issue */
+  .outcome {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  .win {
+    color: lawngreen;
+  }
+  .lose {
+    color: red;
+  }
+  .tie {
+    color: white;
+  }
+  
+  /* Zone de pari et affichage des mains */
+  .handContainer {
+    margin-bottom: 10px;
+  }
+  .hand {
+    margin: 5px 0;
+  }
+  .card {
+    display: inline-block;
+    margin: 3px;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    width: 50px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  /* Boutons d'action (Tirer, Doubler, Split, Rester) */
+  .actionButtons button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 3px;
+  }
+  .hit {
+    background-color: lawngreen;
+    color: white;
+  }
+  .stand {
+    background-color: #e53935;
+    color: white;
+  }
+  .double {
+    background-color: gold;
+    color: black;
+  }
+  .split {
+    background-color: blue;
+    color: white;
+  }
+  
+  /* Bouton Nouvelle manche */
+  #newRoundBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1976d2;
+    color: white;
+    margin-top: 10px;
+    display: none;
+  }
+  
+  /* Affichage de la banque */
+  #bankDisplay {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-size: 16px;
+  }

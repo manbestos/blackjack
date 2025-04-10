@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>BlackJack</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <h1>BlackJack</h1>
+
+  <!-- Phase de configuration initiale -->
+  <div id="setupContainer">
+    <div>
+      <label for="numPlayers">Nombre de joueurs (1 à 7) :</label>
+      <select id="numPlayers">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select>
+    </div>
+    <div>
+      <label for="bankAmount">Montant de départ :</label>
+      <input type="number" id="bankAmount" value="1000" min="0">
+    </div>
+    <button id="startGame">Démarrer la partie</button>
+  </div>
+
+  <!-- Zone de jeu -->
+  <div id="gameContainer">
+    <!-- Section du croupier -->
+    <div id="dealerSection">
+      <h2>Le croupier</h2>
+      <div class="hand" id="dealerHand"></div>
+      <p id="dealerScore"></p>
+    </div>
+    <!-- Zone des joueurs -->
+    <div id="playersSection"></div>
+    <!-- Bouton Nouvelle manche (apparaît après la manche) -->
+    <button id="newRoundBtn">Nouvelle manche</button>
+    <!-- Zone de résultat global (optionnelle) -->
+    <div id="result"></div>
+  </div>
+
+  <!-- Affichage de la banque -->
+  <div id="bankDisplay"></div>
+
+  <script src="jeux.js"></script>
+</body>
+</html>
