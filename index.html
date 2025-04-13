@@ -1,52 +1,76 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>BlackJack</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <title>Blackjack</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <h1>BlackJack</h1>
-
-  <!-- Phase de configuration initiale -->
-  <div id="setupContainer">
-    <div>
-      <label for="numPlayers">Nombre de joueurs (1 à 7) :</label>
-      <select id="numPlayers">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-      </select>
-    </div>
-    <div>
-      <label for="bankAmount">Montant de départ :</label>
-      <input type="number" id="bankAmount" value="1000" min="0">
-    </div>
-    <button id="startGame">Démarrer la partie</button>
+  <!-- Écran de démarrage -->
+  <div id="start-screen">
+    <h1>Blackjack</h1>
+    <br>
+    <!-- Saisie du nom du joueur -->
+    <input type="text" id="nameInput" placeholder="Joueur" />
+    <br /><br />
+    <!-- Saisie du montant total -->
+    <input type="number" id="moneyInput" placeholder="Montant" min="0" />
+    <br /><br />
+    <button id="startButton" disabled>Démarrer le jeu</button>
   </div>
 
-  <!-- Zone de jeu -->
-  <div id="gameContainer">
-    <!-- Section du croupier -->
-    <div id="dealerSection">
-      <h2>Le croupier</h2>
-      <div class="hand" id="dealerHand"></div>
-      <p id="dealerScore"></p>
+  <!-- Table de jeu (initialement masquée) -->
+  <div id="game-table" style="display: none;">
+    <!-- Zone du croupier -->
+    <div class="dealer-area">
+      <h2>Croupier</h2>
+      <!-- Conteneur pour les cartes du croupier -->
+      <div class="cards-container dealer-cards"></div>
+      <!-- Total du croupier -->
+      <div class="dealer-total"></div>
     </div>
-    <!-- Zone des joueurs -->
-    <div id="playersSection"></div>
-    <!-- Bouton Nouvelle manche (apparaît après la manche) -->
-    <button id="newRoundBtn">Nouvelle manche</button>
-    <!-- Zone de résultat global (optionnelle) -->
-    <div id="result"></div>
+    
+    <!-- Affichage du solde restant (centré, masqué après distribution) -->
+    <div id="balance-display">Solde restant: 0</div>
+    
+    <!-- Bouton Distribuer, contenu du conteneur centré -->
+    <div id="deal-container">
+      <button id="dealButton" disabled>Distribuer</button>
+    </div>
+
+    <!-- Zone des joueurs avec 5 sièges -->
+    <div class="players-area">
+      <div class="player-seat" id="seat1">
+        <span class="seat-top-text">Take a seat</span>
+        <span class="seat-status">+</span>
+      </div>
+      <div class="player-seat" id="seat2">
+        <span class="seat-top-text">Take a seat</span>
+        <span class="seat-status">+</span>
+      </div>
+      <div class="player-seat" id="seat3">
+        <span class="seat-top-text">Take a seat</span>
+        <span class="seat-status">+</span>
+      </div>
+      <div class="player-seat" id="seat4">
+        <span class="seat-top-text">Take a seat</span>
+        <span class="seat-status">+</span>
+      </div>
+      <div class="player-seat" id="seat5">
+        <span class="seat-top-text">Take a seat</span>
+        <span class="seat-status">+</span>
+      </div>
+    </div>
   </div>
 
-  <!-- Affichage de la banque -->
-  <div id="bankDisplay"></div>
+  <!-- Boîte pour le solde (en bas à gauche, affichée après distribution) -->
+  <div id="balance-box" style="display: none;">Solde restant: 0</div>
+
+  <!-- Overlay pour afficher le montant gagné (affiché au centre, puis caché) -->
+  <div id="winning-display" style="display: none;">Montant gagné: 0</div>
+
+  <!-- Bouton Nouvelle manche (affiché après disparition de l'overlay des gains) -->
+  <button id="newRoundButton" style="display: none;">Nouvelle manche</button>
 
   <script src="jeux.js"></script>
 </body>
